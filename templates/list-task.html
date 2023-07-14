@@ -1,0 +1,13 @@
+{% for task in tasks %}
+<li class="list-group-item d-flex justify-content-between align-items-center" >
+    <div class="{% if task.completed %} text-success text-decoration-line-through {% endif %}">{{ task.title|title }}</div>     
+    <div class="button">
+        {% if task.completed %}
+            <button class="btn btn-warning btn-sm" hx-get="{% url 'mark_uncompleted' task.pk %}" hx-target="#taskList">Uncompleted</button>
+        {% else %}
+            <button class="btn btn-success btn-sm" hx-get="{% url 'mark_completed' task.pk %}" hx-target="#taskList">Completed</button>
+        {% endif %}
+        <button class="btn btn-danger btn-sm" hx-delete="{% url 'delete_task' task.pk %}" hx-target="#taskList">Delete</button>
+    </div>
+</li>
+{% endfor %}

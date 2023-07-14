@@ -1,0 +1,9 @@
+<li class="list-group-item d-flex justify-content-between align-items-center" >
+    <div class="text">
+        {{ task.title|title }}
+    </div>
+    <div class="button">
+        <button class="btn btn-warning btn-sm">Update</button>
+        <button class="btn btn-danger btn-sm" hx-delete="{% url 'delete_task' task.pk %}" hx-target="taskList" hx-swap="delete">Delete</button>
+    </div>
+</li>
