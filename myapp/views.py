@@ -55,5 +55,4 @@ def mark_uncompleted(request, pk):
         task.completed = False
         task.save()
         tasks = Task.objects.all()
-        print(tasks)
         return render(request, 'list-task.html', {'tasks': tasks})
