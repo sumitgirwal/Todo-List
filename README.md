@@ -26,11 +26,6 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-- Goto project folder
-```bash
-cd codebelog
-```
-
 - Database migrations
 ```bash
 python manage.py makemigrations
